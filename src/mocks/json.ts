@@ -1,0 +1,86 @@
+import CamisetaFront from "/black-shirt-ded.png"
+import CamisetaBack from "/black-shirt-2-ded.png"
+// import Caneca
+
+export const products = [
+  {
+    id: 1,
+    image: CamisetaFront,
+    title: "Camiseta Dev em Dobro",
+    color: "roxa",
+    size: "M",
+    price: 89.0,
+  },
+  {
+    id: 2,
+    image: CamisetaBack,
+    title: "Camiseta Dev em Dobro",
+    color: "roxa",
+    size: "M",
+    price: 89.0,
+  },
+  {
+    id: 3,
+    image: CamisetaFront,
+    title: "Camiseta Dev em Dobro",
+    color: "roxa",
+    size: "M",
+    price: 89.0,
+  },
+  {
+    id: 4,
+    image: CamisetaBack,
+    title: "Camiseta Dev em Dobro",
+    color: "roxa",
+    size: "M",
+    price: 89.0,
+  },
+  {
+    id: 5,
+    image: CamisetaFront,
+    title: "Camiseta Dev em Dobro",
+    color: "roxa",
+    size: "M",
+    price: 89.0,
+  },
+  {
+    id: 6,
+    image: CamisetaBack,
+    title: "Camiseta Dev em Dobro",
+    color: "roxa",
+    size: "M",
+    price: 89.0,
+  },
+  // {
+  //   id: 3,
+  //   image: "",
+  //   title: "Caneca Dev em Dobro",
+  //   color: "Roxa",
+  //   size: "M",
+  //   price: 29.0,
+  // },
+  // {
+  //   id: 4,
+  //   image: "",
+  //   title: "Camiseta Dev em Dobro",
+  //   color: "Roxa",
+  //   size: "M",
+  //   price: 89.0,
+  // },
+  // {
+  //   id: 5,
+  //   image: "",
+  //   title: "Caneca Dev em Dobro",
+  //   color: "Roxa",
+  //   size: "M",
+  //   price: 29.0,
+  // },
+  // {
+  //   id: 6,
+  //   image: "",
+  //   title: "Camiseta Dev em Dobro",
+  //   color: "Roxa",
+  //   size: "M",
+  //   price: 89.0,
+  // },
+];
