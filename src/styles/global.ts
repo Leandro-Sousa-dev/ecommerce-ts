@@ -1,11 +1,15 @@
 import styled, { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
-    * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+  html{
+    font-size: 12px;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
   @font-face {
     font-family: 'Roboto';
@@ -70,17 +74,12 @@ a {
 button {
   cursor: pointer;
 }
-`;
 
-export const Container = styled.div`
-  width: 100%;
-
-  max-width: 1250px;
-
-  margin: 0 auto;
-
-  padding-left: 32px;
-  padding-right: 32px;
+@media (min-width: 450px){
+  html{
+    font-size: 16px;
+  }
+}
 `;
 
 export const Screen = styled.div`

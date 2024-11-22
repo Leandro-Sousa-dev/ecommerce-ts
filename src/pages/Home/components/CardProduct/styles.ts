@@ -1,28 +1,51 @@
 import { styled } from "styled-components"
 
-export const Container = styled.div`
+export const CardContainer = styled.div`
     display: flex;
     flex-direction: column;
 
     div:first-child {
+        display: flex;
         width: 100%;
 
         img {
             width: 100%;
-            height: auto
             object-fit: cover;
         }
     }
 
     div:nth-child(2) {
-        padding: 40px 20px;
+        padding: 2.5rem 1.3rem;
 
         display: flex;
         flex-direction: column;
         gap: 1rem;
 
-        background: #130234;
+        background-color: #130234;
 
         color: #fff;
+
+        letter-spacing: 1.5px;
+
+        font-weight: 300;
+
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+
+        h2{
+            font-size: 1.3rem;
+            font-weight: 500;
+        }
+       
+        div{
+            display: flex;
+            justify-content: flex-end;
+            
+            color: #6BB27C;
+
+            font-size: 1.6rem;
+            font-weight: 500;
+            text-align: center;
+        }
     }
 `;

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "../../../../components/ui/Button";
-import { Container } from "./styles";
+import { CardContainer } from "./styles";
 
 interface ProductData {
   id: number;
@@ -19,20 +19,25 @@ export const CardProduct = ({ products }: CardProductsProps) => {
   // const { addToCart } = useCart()
 
   return (
-    <Container>
+    <CardContainer>
       <Link to="/batata">
         <div>
           <img src={products.image} alt="Foto do produto" />
         </div>
+        
         <div>
           <h2>{products.title}</h2>
+
+          <p>Cor: {products.color}</p>
+          <p>Tamanho: {products.size}</p>
+
           <div>
-            <p>Cor: {products.color}</p>
-            <p>Tamanho: {products.size}</p>
+            <p>R$ {products.price},00</p>
           </div>
+
+          <Button>Adicionar ao carrinho</Button>
         </div>
-        <Button>Adicionar ao carrinho</Button>
       </Link>
-    </Container>
+    </CardContainer>
   );
 };
