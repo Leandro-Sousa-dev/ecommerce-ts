@@ -1,8 +1,8 @@
 import { styled, css } from 'styled-components'
 
 export const HeaderContainer = styled.header`
-
 border-bottom: 1px solid #6528d3;
+
 #content{
 
   margin: 0 auto;
@@ -164,6 +164,7 @@ border-bottom: 1px solid #6528d3;
  
         cursor pointer;
         
+        margin: 0;
       }
     }
 
@@ -202,7 +203,7 @@ border-bottom: 1px solid #6528d3;
     }
     
     p{
-      display: ${props.theme.cart};
+      display: ${props.theme.cartText};
     }
     
   }

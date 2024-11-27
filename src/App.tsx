@@ -1,12 +1,16 @@
 import { BrowserRouter } from "react-router-dom";
 import { AppRoutes } from "./routes";
 import { GlobalStyle, Screen } from "./styles/global";
+import { CartProvider } from "./Contexts/Cart";
 
 function App() {
   return (
     <BrowserRouter>
       <Screen>
-        <AppRoutes />
+        <CartProvider>
+          <AppRoutes />
+
+        </CartProvider>
         <GlobalStyle />
       </Screen>
     </BrowserRouter>

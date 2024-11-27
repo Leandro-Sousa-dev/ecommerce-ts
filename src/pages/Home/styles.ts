@@ -11,8 +11,11 @@ export const Container = styled.div`
   flex-direction: column;
   padding: 2rem;
 
-  h1 {
+  h2 {
     color: #fff;
-    padding: 2rem 0;
+
+    padding: 1.5rem 0;
+
+    font-size: 1.5rem;
   }
 `;

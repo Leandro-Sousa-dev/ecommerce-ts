@@ -1,6 +1,5 @@
 import CamisetaFront from "/black-shirt-ded.png"
 import CamisetaBack from "/black-shirt-2-ded.png"
-// import Caneca
 
 export const products = [
   {

@@ -18,7 +18,7 @@ export const SectionProducts = ({ products }: SectionProductsProps) => {
   return (
     <Container>
       {products.map((product) => (
-        <CardProduct key={product.id} products={product} />
+        <CardProduct key={product.id} product={product} />
       ))}
     </Container>
   );

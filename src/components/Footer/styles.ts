@@ -42,3 +42,19 @@ export const FooterContainer = styled.footer`
     }
 
 `
+export const Attribuition = styled.div`
+    background-color: #6528D3;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 3.5rem;
+    width: 100%;
+
+    color: #fff;
+
+    font-weight: 300;
+    letter-spacing: 2px; 
+
+`

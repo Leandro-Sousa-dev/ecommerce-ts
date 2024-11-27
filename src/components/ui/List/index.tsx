@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 
 interface ListData {
   name: string,
-  url: string 
+  url: string
 }
 
 interface ListProperty {
@@ -14,7 +14,7 @@ export const List = ({list}: ListProperty) => {
         <ul>
             {list.map((item, index) => (
                 <li key={index}>
-                    <Link to={item.url}>{item.name}</Link>
+                    <Link to={item.url} >{item.name}</Link>
                 </li>
             ))}
         </ul>

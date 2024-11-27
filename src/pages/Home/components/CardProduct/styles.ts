@@ -4,6 +4,8 @@ export const CardContainer = styled.div`
     display: flex;
     flex-direction: column;
 
+    background-color: #130234;
+
     div:first-child {
         display: flex;
         width: 100%;
@@ -21,8 +23,6 @@ export const CardContainer = styled.div`
         flex-direction: column;
         gap: 1rem;
 
-        background-color: #130234;
-
         color: #fff;
 
         letter-spacing: 1.5px;
@@ -32,7 +32,7 @@ export const CardContainer = styled.div`
         border-bottom-left-radius: 20px;
         border-bottom-right-radius: 20px;
 
-        h2{
+        h3{
             font-size: 1.3rem;
             font-weight: 500;
         }

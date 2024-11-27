@@ -1,5 +1,5 @@
 import { List } from "../ui/List"
-import { FooterContainer } from "./styles"
+import { FooterContainer, Attribuition } from "./styles"
 
 const institucionalList = [
     { name: 'Home', url: '/' },
@@ -27,25 +27,30 @@ const enderecoList = [
 
 export const Footer = () => {
     return (
-        <FooterContainer>
-            <div>
-
+        <>
+            <FooterContainer>
                 <div>
-                    <h3>Institucional</h3>
-                    <List list={institucionalList}></List>
-                </div>
 
-                <div>
-                    <h3>Ajuda</h3>
-                    <List list={ajudaList}></List>
-                </div>
+                    <div>
+                        <h3>Institucional</h3>
+                        <List list={institucionalList}></List>
+                    </div>
 
-                <div>
-                    <h3>Endereço</h3>
-                    <List list={enderecoList}></List>
-                </div>
+                    <div>
+                        <h3>Ajuda</h3>
+                        <List list={ajudaList}></List>
+                    </div>
 
-            </div>
-        </FooterContainer>
+                    <div>
+                        <h3>Endereço</h3>
+                        <List list={enderecoList}></List>
+                    </div>
+
+                </div>
+            </FooterContainer>
+            <Attribuition>
+                <p>@2024 - Todos os direitos reservados</p>
+            </Attribuition>
+        </>
     )
 }

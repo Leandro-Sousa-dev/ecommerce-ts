@@ -1,12 +1,15 @@
 import { styled } from "styled-components" 
 
 export const ButtonContainer = styled.button`
+  flex-grow: 0;
+
+  margin: 0 1.3rem 2.5rem;
+
+  padding: 1.3rem 2.5rem;
+
   background-color: #6528d3;
 
   min-height: 52px;
-  width: 100%;
-
-  padding: 1rem 2rem;
 
   border: 0;
   border-radius: 4px;

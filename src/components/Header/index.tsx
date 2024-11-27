@@ -1,12 +1,13 @@
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import { HeaderContainer } from "./styles";
 import { Button } from "../ui/Button";
 
 import Logo from "/logo.svg";
-import Cart from "/icon-cart.svg";
+import CartImg from "/icon-cart.svg";
 import User from "/icon-user.svg";
-import { ChangeEvent, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { List } from "../ui/List";
+import { CartContext } from "../../Contexts/Cart";
 
 const menuItems = [
   { name: "Home", url: "/" },
@@ -16,57 +17,80 @@ const menuItems = [
   { name: "Fale conosco", url: "/fale-conosco" },
 ];
 
-  export interface Styles {
-    backgroundColor: string
-    direction: string
-    img: string
-    button: string
-    cart: string
-    height: string
-    justify: string
-    align: string
-    nav: string
-  }
+export interface Styles {
+  backgroundColor: string
+  direction: string
+  img: string
+  button: string
+  cartText: string
+  height: string
+  justify: string
+  align: string
+  nav: string
+}
 
-  export interface SH {
-    inactive: Styles
-    active: Styles
-  }
+export interface SH {
+  inactive: Styles
+  active: Styles
+}
 
-  const styleHeader: SH = {
-    inactive: {
-      backgroundColor: '#111111',
-      direction: 'row',
-      img: 'flex',
-      button: 'none',
-      cart: 'none',
-      height: '5rem',
-      justify: 'space-between',
-      align: 'center',
-      nav: 'none',
-    },
-    active: {
-      backgroundColor: '#130234',
-      direction: 'column',
-      img: 'none',
-      button: 'flex',
-      cart: 'flex',
-      height: '18rem',
-      justify: 'center',
-      align: 'start',
-      nav: 'flex',
-    },
-  }
-  
-  export const Header = () => {
+const styleHeader: SH = {
+  inactive: {
+    backgroundColor: '#111111',
+    direction: 'row',
+    img: 'flex',
+    button: 'none',
+    cartText: 'none',
+    height: '5rem',
+    justify: 'space-between',
+    align: 'center',
+    nav: 'none',
+  },
+  active: {
+    backgroundColor: '#130234',
+    direction: 'column',
+    img: 'none',
+    button: 'flex',
+    cartText: 'flex',
+    height: '18rem',
+    justify: 'center',
+    align: 'start',
+    nav: 'flex',
+  },
+}
+
+export const Header = () => {
 
   const [header, setHeader] = useState(styleHeader.inactive)
-  const handleMenu = (event: ChangeEvent<HTMLInputElement>) => {
-    event.target.checked == true ?
-      setHeader(styleHeader.active) :
-      setHeader(styleHeader.inactive)
 
+  const context = useContext(CartContext)
+
+  const cartContext = context!.cart
+  const location = useLocation()
+
+  const handleMenu = () => {
+    const body = document.getElementsByTagName('body')[0] as HTMLElement
+    const menu = document.getElementById('menuHamburguer') as HTMLInputElement
+
+    if (header == styleHeader.active) {
+
+      menu.checked = false
+      body.style.overflow = 'auto'
+
+      setHeader(styleHeader.inactive)
+    } else {
+
+      body.style.overflow = 'hidden'
+
+      setHeader(styleHeader.active)
+
+    }
   }
+
+  useEffect(() => {
+    if (header == styleHeader.active) handleMenu()
+
+  }, [location])
 
   return (
     <HeaderContainer theme={header}>
@@ -104,10 +128,10 @@ const menuItems = [
           </div>
 
           <Link to='/cart' id='cartContainer'>
-            <img src={Cart} alt="Ícone do carrinho" />
+            <img src={CartImg} alt="Ícone do carrinho" />
 
-            <div>
-              <span>2</span>
+            <div style={{ display: `${cartContext.length > 0 ? 'flex' : 'none'}` }}>
+              <span>{cartContext.length}</span>
             </div>
 
             <p>Carrinho de compras</p>

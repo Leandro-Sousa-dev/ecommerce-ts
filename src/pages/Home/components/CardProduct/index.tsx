@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { Button } from "../../../../components/ui/Button";
 import { CardContainer } from "./styles";
+import { useContext } from "react";
+import { CartContext } from "../../../../Contexts/Cart";
 
 interface ProductData {
   id: number;
@@ -12,32 +14,33 @@ interface ProductData {
 }
 
 interface CardProductsProps {
-  products: ProductData;
+  product: ProductData;
 }
 
-export const CardProduct = ({ products }: CardProductsProps) => {
-  // const { addToCart } = useCart()
+export const CardProduct = ({ product }: CardProductsProps) => {
+  const context = useContext(CartContext)
+
+  const cartContext = context!
 
   return (
     <CardContainer>
-      <Link to="/batata">
+      <Link to={`/${product.title}-${product.id}`}>
         <div>
-          <img src={products.image} alt="Foto do produto" />
+          <img src={product.image} alt="Foto do produto" />
         </div>
-        
-        <div>
-          <h2>{products.title}</h2>
 
-          <p>Cor: {products.color}</p>
-          <p>Tamanho: {products.size}</p>
+        <div>
+          <h3>{product.title}</h3>
+
+          <p>Cor: {product.color}</p>
+          <p>Tamanho: {product.size}</p>
 
           <div>
-            <p>R$ {products.price},00</p>
+            <p>R$ {product.price},00</p>
           </div>
-
-          <Button>Adicionar ao carrinho</Button>
         </div>
       </Link>
+      <Button onClick={() => { cartContext.setCart([...cartContext.cart, product]) }}>Adicionar ao carrinho</Button>
     </CardContainer>
   );
 };

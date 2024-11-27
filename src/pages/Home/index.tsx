@@ -5,7 +5,7 @@ import { Container } from "./styles"
 export const Home = () => {
     return (
         <Container>
-            <h1>Produtos</h1>
+            <h2>Produtos</h2>
             <SectionProducts products={products}/>
         </Container>
     )
