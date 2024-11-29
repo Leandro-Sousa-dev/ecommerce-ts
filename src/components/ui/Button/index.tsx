@@ -15,7 +15,7 @@ export const Button = ({
   onClick,
 }: ButtonProps) => {
   return (
-    <ButtonContainer as={as} href={href} onClick={onClick}>
+    <ButtonContainer as={as} href={href} onClick={onClick} >
       {children}
     </ButtonContainer>
   )
