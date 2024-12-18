@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "../../../../components/ui/Button";
 import { CardContainer } from "./styles";
-import { useContext } from "react";
-import { CartContext } from "../../../../Contexts/CartContext";
+import { useCart } from "../../../../hooks/useCart";
 
 interface ProductData {
   id: number;
@@ -18,9 +17,7 @@ interface CardProductsProps {
 }
 
 export const CardProduct = ({ product }: CardProductsProps) => {
-  const context = useContext(CartContext);
-
-  const cartContext = context!;
+  const { addProductIntoCart } = useCart();
 
   return (
     <CardContainer>
@@ -42,7 +39,7 @@ export const CardProduct = ({ product }: CardProductsProps) => {
       </Link>
       <Button
         onClick={() => {
-          cartContext.setCart([...cartContext.cart, product]);
+          addProductIntoCart(product);
         }}
       >
         Adicionar ao carrinho

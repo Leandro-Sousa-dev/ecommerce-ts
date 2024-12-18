@@ -1,12 +1,5 @@
-import React from "react"
-import { ButtonContainer } from "./styles"
-
-interface ButtonProps {
-  children: React.ReactNode
-  as?: "button" | "a"
-  href?: string
-  onClick?: () => void
-}
+import { ButtonContainer, ButtonContent } from "./styles"
+import { ButtonProps } from "../../../interfaces/ButtonProps"
 
 export const Button = ({
   children,
@@ -14,9 +7,14 @@ export const Button = ({
   href,
   onClick,
 }: ButtonProps) => {
+
+  const img = typeof children == 'object' && Array.isArray(children) && children[0]?.type == 'img'
+  
   return (
-    <ButtonContainer as={as} href={href} onClick={onClick} >
-      {children}
+    <ButtonContainer $imgButton={img}>
+      <ButtonContent as={as} href={href} onClick={onClick}>
+        {children}
+      </ButtonContent>
     </ButtonContainer>
   )
 }

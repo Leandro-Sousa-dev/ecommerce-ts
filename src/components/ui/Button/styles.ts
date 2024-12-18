@@ -1,22 +1,104 @@
-import { styled } from "styled-components" 
+import { css, styled } from "styled-components"
 
-export const ButtonContainer = styled.button`
-  flex-grow: 0;
+interface HaveImgProp {
+  $imgButton: boolean
+}
 
-  margin: 0 1.3rem 2.5rem;
+export const ButtonContainer = styled.div<HaveImgProp>`
+  button{
 
-  padding: 1.3rem 2.5rem;
+    background-color: #6528d3;
+    
+    min-height: 52px;
 
-  background-color: #6528d3;
+    font-weight: 500;
 
-  min-height: 52px;
+    padding: 1.1rem 2.5rem;
+    
+    border: 0;
+    border-radius: 4px;
 
-  border: 0;
-  border-radius: 4px;
+  }
 
+  ${({ $imgButton }) => $imgButton ? css`
+  margin-right: 1rem;
+
+    a{
+      
+    img{
+      width: 2rem;
+    }
+    
+    height: 32px;
+    
+    font-weight: 400;
+    
+    display: flex;
+    
+    padding-right: 1rem;
+    
+    border-right: 1px solid #6528D3;
+    
+    p{
+      display: none;
+      
+    }
+    
+  }
+  `
+    : css`
+  a{
+  
+    display: flex;
+    align-items: center;
+    
+    min-height: 52px;
+
+    background-color: #6528d3;
+    
+    font-weight: 500;
+
+    padding: 1.1rem 2.5rem;
+    
+    border: 0;
+    border-radius: 4px;
+  
+  }
+  `
+  }
+
+  @media( min-width: 900px){
+    a{
+      height: 52px;
+
+      background-color: #6528d3;
+
+      font-weight: 400;
+      
+      white-space: nowrap;
+
+      padding: 1.1rem 2.5rem;
+
+      border: 0;
+      
+      border-radius: 4px;
+
+      img{
+        display: none;
+      }
+
+      p{
+        display: flex;
+      }
+    
+    }
+  }
+`;
+
+export const ButtonContent = styled.button`
+  
   color: #fff;
 
   font-size: 1rem;
-  font-weight: 500;
   letter-spacing: 1.5px;
-`;
+`

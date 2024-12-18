@@ -1,13 +1,11 @@
-import { useContext } from "react";
 import { CartContainer } from "./styles";
-import { CartContext } from "../../Contexts/CartContext";
 import { Container } from "../Home/styles";
 import { Link } from "react-router-dom";
+import { Button } from "../../components/ui/Button";
+import { useCart } from "../../hooks/useCart";
 
 export const Cart = () => {
-  const context = useContext(CartContext);
-
-  const cartContext = context!;
+  const {cart, removeProductFromCart} = useCart();
 
   return (
     <Container>
@@ -15,7 +13,7 @@ export const Cart = () => {
 
       <CartContainer>
         <div>
-          {cartContext.cart.length > 0 ? (
+          {cart.length > 0 ? (
             <table id="cartTable">
               <thead>
                 <tr>
@@ -27,7 +25,7 @@ export const Cart = () => {
                   <th></th>
                 </tr>
               </thead>
-              {cartContext.cart.map((item, index) => (
+              {cart.map((item, index) => (
                 <tbody key={index}>
                   <tr>
                     <td>
@@ -40,13 +38,13 @@ export const Cart = () => {
                       <p>{item.price},00</p>
                     </td>
                     <td>
-                      <p>{"input to multiply"}</p>
+                      <p>{item.quantity}</p>
                     </td>
                     <td>
-                      <p>{"item.price * multiplyed"}</p>
+                      <p>{item.price * item.quantity},00</p>
                     </td>
                     <td>
-                      <button>{"remove from cart"}</button>
+                      <Button onClick={()=>{removeProductFromCart(item)}}>{"remove from cart"}</Button>
                     </td>
                   </tr>
                 </tbody>
@@ -81,10 +79,3 @@ export const Cart = () => {
     </Container>
   );
 };
-
-// {cartContext.cart.length > 0 ? cartContext.cart.map((product, index) => (
-//     <li key={index}>
-//         <p>product.title</p>
-//     </li>
-//     console.log(product)
-// )) : console.log('a')}
