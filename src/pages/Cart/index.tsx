@@ -1,11 +1,19 @@
+// import { useForm } from "react-hook-form";
 import { CartContainer } from "./styles";
 import { Container } from "../Home/styles";
 import { Link } from "react-router-dom";
 import { Button } from "../../components/ui/Button";
 import { useCart } from "../../hooks/useCart";
+import trash from "/trash.svg"
+
 
 export const Cart = () => {
-  const {cart, removeProductFromCart} = useCart();
+  const {
+    cart,
+    removeProductFromCart,
+    productCartIncrement,
+    productCartDecrement,
+    priceTotal } = useCart();
 
   return (
     <Container>
@@ -29,22 +37,29 @@ export const Cart = () => {
                 <tbody key={index}>
                   <tr>
                     <td>
-                      <img src={item.image} alt="item.title" />
+                      <img id="productImg" src={item.image} alt="item.title" />
                     </td>
                     <td>
                       <Link to={`/${item.title}-${item.id}`}>{item.title}</Link>
                     </td>
                     <td>
-                      <p>{item.price},00</p>
+                      <p>R$ {item.price},00</p>
                     </td>
                     <td>
-                      <p>{item.quantity}</p>
+
+                        <button disabled={item.quantity == 1} onClick={() => { productCartDecrement(item) }}>-</button>
+
+                        <input type="text" value={item.quantity}/>
+
+                        <button onClick={() => { productCartIncrement(item) }}>+</button>
                     </td>
                     <td>
-                      <p>{item.price * item.quantity},00</p>
+                      <p>R$ {item.price * item.quantity},00</p>
                     </td>
                     <td>
-                      <Button onClick={()=>{removeProductFromCart(item)}}>{"remove from cart"}</Button>
+                      <button id="trash" onClick={() => { removeProductFromCart(item) }}>
+                        <img src={`${trash}`} alt="Remove from cart" />
+                      </button>
                     </td>
                   </tr>
                 </tbody>
@@ -53,6 +68,11 @@ export const Cart = () => {
           ) : (
             <p>Sem itens</p>
           )}
+          <div>
+            <h4>Cupom</h4>
+            <input type="text" />
+            <button>Aplicar cupom</button>
+          </div>
         </div>
 
         <div>
@@ -72,9 +92,20 @@ export const Cart = () => {
                 <option value="franca">França</option>
               </select>
             </div>
+
+            <button>Atualizar endereço</button>
+
           </div>
-          <div></div>
+          <div>
+            <div>
+              <p>Subtotal dos pedidos:</p>
+              <p>{priceTotal()}</p>
+            </div>
+          </div>
         </div>
+
+        <Button>Finalizar compra</Button>
+
       </CartContainer>
     </Container>
   );

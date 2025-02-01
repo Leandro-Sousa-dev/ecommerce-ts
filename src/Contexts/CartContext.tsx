@@ -11,6 +11,7 @@ interface CartContextProps {
   removeProductFromCart: (product: Products) => void;
   productCartIncrement: (product: Products) => void;
   productCartDecrement: (product: Products) => void;
+  priceTotal: () => number;
 }
 
 // eslint-disable-next-line react-refresh/only-export-components
@@ -88,15 +89,19 @@ export const CartProvider = ({ children }: CartProviderProps) => {
   function productCartDecrement(product: Products) {
     updateProductQuantity(product, product.quantity - 1);
   }
-
+  
+  function priceTotal() {
+    return cart.reduce((sum, item)=> sum + item.quantity * item.price ,0)
+  }
   return (
     <CartContext.Provider
       value={{
         cart,
         addProductIntoCart,
         removeProductFromCart,
-        productCartDecrement,
         productCartIncrement,
+        productCartDecrement,
+        priceTotal,
       }}
     >
       {children}

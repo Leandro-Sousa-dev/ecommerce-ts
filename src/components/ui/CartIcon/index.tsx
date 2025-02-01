@@ -13,8 +13,8 @@ export const CartIconContainer = ({ children }: CartProps) => {
     return (
         <CartStyles to='/cart'>
             <img src={CartIcon} alt="Ícone do carrinho" />
-            <div style={cart.length == 0 ? {display: 'none'} : {display: 'flex'}}>
-                <span>{totalCartItems}</span>
+            <div style={totalCartItems == 0 ? {display: 'none'} : {display: 'flex'}}>
+                <span>{totalCartItems > 99 ? '99+' : totalCartItems}</span>
             </div>
             {children}
         </CartStyles>
