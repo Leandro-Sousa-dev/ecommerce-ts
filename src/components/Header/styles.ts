@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import { theme } from "../../styles/variables";
 
 interface ContainerProps {
   $isMenuOpen: boolean;
@@ -6,9 +7,9 @@ interface ContainerProps {
 
 export const HeaderContainer = styled.header<ContainerProps>`
 
-  color: #fff;
+  color: ${theme.baseColor};
 
-  border-bottom: 1px solid #6528D3;
+  border-bottom: 1px solid ${theme.bgLightColor};
 
   z-index: 1;
 
@@ -16,7 +17,7 @@ export const HeaderContainer = styled.header<ContainerProps>`
     
     position: relative;
     
-    background: #111111;
+    background: ${theme.bgBaseColor};
     
     max-width: 1250px;
 
@@ -65,7 +66,7 @@ export const HeaderContainer = styled.header<ContainerProps>`
       top: 0;
       left: 0;
       
-      background: #130234;
+      background: ${theme.bgDarkColor};
 
       height: 100vh;
       width: 100%;
@@ -103,7 +104,7 @@ export const HeaderContainer = styled.header<ContainerProps>`
         width: 100%;
 
         padding: 2.5rem 2rem;
-        border-top: 1px solid #6528D3;
+        border-top: 1px solid ${theme.bgLightColor};
 
         li{
           font-size: 1.5rem;

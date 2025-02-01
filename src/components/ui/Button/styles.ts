@@ -1,4 +1,5 @@
 import { css, styled } from "styled-components"
+import { theme } from "../../../styles/variables";
 
 interface HaveImgProp {
   $imgButton: boolean
@@ -7,7 +8,7 @@ interface HaveImgProp {
 export const ButtonContainer = styled.div<HaveImgProp>`
   button{
 
-    background-color: #6528d3;
+    background-color: ${theme.bgLightColor};
     
     min-height: 52px;
 
@@ -37,7 +38,7 @@ export const ButtonContainer = styled.div<HaveImgProp>`
     
     padding-right: 1rem;
     
-    border-right: 1px solid #6528D3;
+    border-right: 1px solid ${theme.bgLightColor};
     
     p{
       display: none;
@@ -54,7 +55,7 @@ export const ButtonContainer = styled.div<HaveImgProp>`
     
     min-height: 52px;
 
-    background-color: #6528d3;
+    background-color: ${theme.bgLightColor};
     
     font-weight: 500;
 
@@ -71,7 +72,7 @@ export const ButtonContainer = styled.div<HaveImgProp>`
     a{
       height: 52px;
 
-      background-color: #6528d3;
+      background-color: ${theme.bgLightColor};
 
       font-weight: 400;
       
@@ -97,7 +98,7 @@ export const ButtonContainer = styled.div<HaveImgProp>`
 
 export const ButtonContent = styled.button`
   
-  color: #fff;
+  color: ${theme.baseColor};
 
   font-size: 1rem;
   letter-spacing: 1.5px;

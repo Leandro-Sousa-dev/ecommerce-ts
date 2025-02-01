@@ -1,10 +1,11 @@
 import { styled } from "styled-components"
+import { theme } from "../../../../styles/variables";
 
 export const CardContainer = styled.div`
     display: flex;
     flex-direction: column;
 
-    background-color: #130234;
+    background-color: ${theme.bgDarkColor};
 
     div:first-child {
         display: flex;
@@ -23,7 +24,7 @@ export const CardContainer = styled.div`
         flex-direction: column;
         gap: 1rem;
 
-        color: #fff;
+        color: ${theme.baseColor};
 
         letter-spacing: 1.5px;
 
@@ -41,7 +42,7 @@ export const CardContainer = styled.div`
             display: flex;
             justify-content: flex-end;
             
-            color: #6BB27C;
+            color: ${theme.priceColor};
 
             font-size: 1.6rem;
             font-weight: 500;

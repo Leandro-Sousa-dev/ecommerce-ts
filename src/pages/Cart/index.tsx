@@ -25,7 +25,7 @@ export const Cart = () => {
             <table id="cartTable">
               <thead>
                 <tr>
-                  <th>Produto</th>
+                  <th id="productColum">Produto</th>
                   <th>Descrição</th>
                   <th>Preço</th>
                   <th>Quantidade</th>
@@ -36,7 +36,7 @@ export const Cart = () => {
               {cart.map((item, index) => (
                 <tbody key={index}>
                   <tr>
-                    <td>
+                    <td id="productData">
                       <img id="productImg" src={item.image} alt="item.title" />
                     </td>
                     <td>

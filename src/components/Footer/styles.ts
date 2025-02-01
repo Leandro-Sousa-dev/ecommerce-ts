@@ -1,7 +1,8 @@
 import { styled } from 'styled-components'
+import { theme } from '../../styles/variables'
 
 export const FooterContainer = styled.footer`
-    background-color: #130234;
+    background-color: ${theme.bgDarkColor};
     
     whidth: 100%;
  
@@ -14,7 +15,7 @@ export const FooterContainer = styled.footer`
         padding: 3.5rem 2rem;
         margin: 0 auto;
         
-        color: #6528D3;
+        color: ${theme.bgLightColor};
 
         div{
             display: flex;
@@ -23,7 +24,7 @@ export const FooterContainer = styled.footer`
             gap: 1rem;
 
             h3{
-                color: #fff;
+                color: ${theme.baseColor};
             }
             
             ul{
@@ -43,7 +44,7 @@ export const FooterContainer = styled.footer`
 
 `
 export const Attribuition = styled.div`
-    background-color: #6528D3;
+    background-color: ${theme.bgLightColor};
 
     display: flex;
     align-items: center;
@@ -52,7 +53,7 @@ export const Attribuition = styled.div`
     height: 3.5rem;
     width: 100%;
 
-    color: #fff;
+    color: ${theme.baseColor};
 
     font-weight: 300;
     letter-spacing: 2px; 

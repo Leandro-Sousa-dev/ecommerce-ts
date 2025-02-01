@@ -1,18 +1,26 @@
 import styled from "styled-components";
+import { theme } from "../../styles/variables";
 
 export const CartContainer = styled.section`
-    color: #fff;
-    display: grid;
-    grid-template-columns: 7fr 3fr;
+    color: ${theme.baseColor};
+    display: flex;
+    flex-direction: column;
+    // grid-template-columns: 7fr 3fr;
     gap: 2rem; 
 
     #cartTable{
+
+        #productColum,
+        #productData{
+            display: none;
+        }
+
         width: 100%;
 
         border-collapse: collapse;
-        background-color: #130234;
+        background-color: ${theme.bgDarkColor};
         thead{
-            background-color: #6528D3;
+            background-color: ${theme.bgLightColor};
             
             tr{
                 th{
@@ -37,13 +45,13 @@ export const CartContainer = styled.section`
                     input{
                         height: 3rem;
                         width: 3rem;
-                        color: #fff;
+                        color: ${theme.baseColor};
                     
                         padding: 1rem 0.5rem;
                         
-                        border: 1px solid #6528D3;
+                        border: 1px solid ${theme.bgLightColor};
                         border-radius: 5px;
-                        background: #130234;
+                        background: ${theme.bgDarkColor};
 
                         :-webkit-outer-spin-button,
                         :-webkit-inner-spin-button {
@@ -53,7 +61,7 @@ export const CartContainer = styled.section`
                     }
                    
                     button{
-                        color: #fff;
+                        color: ${theme.baseColor};
 
                         border: 0;
                         background: transparent;
@@ -65,12 +73,13 @@ export const CartContainer = styled.section`
                         height: 1.5rem;
                         
                         &:disabled{
-                            color: #333;
+                            color: ${theme.disabledColor};
                             cursor: default;
                         }
                     }         
                     
                     #productImg{
+                        display: none;
                         width: 7rem;
                         border-radius: 8px;
                     }
@@ -87,11 +96,11 @@ export const CartContainer = styled.section`
                 }
 
                 td:nth-child(2){
-                    color: #6528D3;
+                    color: ${theme.bgLightColor};
                 }
 
                 td:nth-child(5){
-                    color: #6BB27C;
+                    color: ${theme.priceColor};
 
                     font-weight: 700;
                 }

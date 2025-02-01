@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { theme } from "../../../styles/variables";
 
 export const CartStyles = styled(Link)`
 
@@ -28,7 +29,7 @@ export const CartStyles = styled(Link)`
       
       font-size: 0.8rem;
       
-      background-color: #6528D3;
+      background-color: ${theme.bgLightColor};
       
       border-radius: 50%;
 

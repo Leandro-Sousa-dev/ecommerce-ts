@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
   html{
@@ -80,8 +80,4 @@ button {
     font-size: 16px;
   }
 }
-`;
-
-export const Screen = styled.div`
-  background: #111111;
 `;
