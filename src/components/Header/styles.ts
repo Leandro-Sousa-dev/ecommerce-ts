@@ -13,8 +13,7 @@ export const HeaderContainer = styled.header<ContainerProps>`
 
   z-index: 1;
 
-  >div{
-    
+  .header{
     position: relative;
     
     background: ${theme.bgBaseColor};
@@ -30,7 +29,7 @@ export const HeaderContainer = styled.header<ContainerProps>`
     display: flex;
     align-items: center;
 
-   >div:nth-child(1){
+   .main{
 
     width: 100%;
 
@@ -42,9 +41,13 @@ export const HeaderContainer = styled.header<ContainerProps>`
 
     div:first-child{
       display: flex;
-
+      align-items: center;
       gap: 1rem;
-
+      
+    }
+      
+    .logo{
+      width: 10rem;
     }
 
     nav ul{
@@ -77,7 +80,7 @@ export const HeaderContainer = styled.header<ContainerProps>`
     $isMenuOpen ? "translateX(0)" : "translateX(-100%)"};
       transition: transform 0.3s ease-in-out;
 
-      #asideHeader{
+      .asideHeader{
         display: flex;
         flex-direction: column;
         align-items: flex-start;

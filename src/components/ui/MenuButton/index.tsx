@@ -2,7 +2,7 @@ import { MenuButtonStyles } from "./styles"
 
 interface MenuButtonProps {
     img: string
-    onClick: () => void
+    onClick?: () => void
 }
 export const MenuButton = ({
     img,

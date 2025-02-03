@@ -23,22 +23,22 @@ export const Header = () => {
 
   return (
     <HeaderContainer $isMenuOpen={menuOpen}>
-      <div>
-        <div>
+      <div className="header">
+        <div className="main">
           <div>
             <MenuButton img={MenuIcon} onClick={() => setMenuOpen(!menuOpen)} />
             <div>
-              <img src={Logo} alt="Logo Dev em Dobro" />
+              <img className="logo" src={Logo} alt="Logo Dev em Dobro" />
             </div>
           </div>
           <nav>
             <List list={menuItems} />
           </nav>
 
-          <aside>
-            <div id='asideHeader'>
+          <aside onClick={() => setMenuOpen(!menuOpen)}>
+            <div className='asideHeader'>
 
-              <MenuButton img={CloseIcon} onClick={() => setMenuOpen(!menuOpen)} />
+              <MenuButton img={CloseIcon} />
               <div>
                 <img src={Logo} alt="Logo Dev em Dobro" />
               </div>
