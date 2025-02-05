@@ -1,22 +1,23 @@
 import styled from "styled-components";
 import { theme } from "../../../styles/variables";
 
-interface InputWidth {
-    $width: string
-}
-
-export const InputStyle = styled.input<InputWidth>`
+export const InputStyle = styled.input`
     padding: 1rem;
     
     color: ${theme.baseColor};
-    font-size: 1rem;
+    font-size: 1.2rem;
     
-    width: ${({ $width }) => $width ?? ''};
+    width: 100%;
 
     &::placeholder {
         color: ${theme.bgLightColor};
         letter-spacing: 0.1rem;
 
+    }
+    
+    &:focus,
+    &:active{
+        outline: 1px solid ${theme.baseColor};
     }
 
     background: ${theme.bgDarkColor};

@@ -12,8 +12,7 @@ export const ButtonStyle = styled.button`
     border-radius: 4px;
 
     letter-spacing: 0.1rem;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     font-weight: 400;
-    
 
 `

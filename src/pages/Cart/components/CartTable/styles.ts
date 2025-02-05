@@ -67,6 +67,7 @@ export const Table = styled.table`
             }
 
             .quantityContainer{
+                gap: 0.5rem;
                 .quantity{
                     height: 3rem;
                     width: 3rem;

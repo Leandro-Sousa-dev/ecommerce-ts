@@ -1,9 +1,9 @@
 import { CartContainer } from "./styles";
 import { Container } from "../Home/styles";
-import { Button } from "../../components/ui/Button";
 import { useCart } from "../../hooks/useCart";
 import { CartTable } from "./components/CartTable";
 import { CupomContainer } from "./components/CupomContainer";
+import { ShipmentContainer } from "./components/ShipmentContainer"
 
 
 export const Cart = () => {
@@ -24,37 +24,7 @@ export const Cart = () => {
 
             </div>
 
-            <div>
-              <div>
-                <p>Entrega</p>
-                <div>
-                  <label>CEP</label>
-                  <input type="number" />
-                </div>
-
-                <div>
-                  <label htmlFor="pais">Pais</label>
-                  <select id="pais">
-                    <option value="brasil">Brasil</option>
-                    <option value="canada">Canadá</option>
-                    <option value="italia">Itália</option>
-                    <option value="franca">França</option>
-                  </select>
-                </div>
-
-                <button>Atualizar endereço</button>
-
-              </div>
-              <div>
-                <div>
-                  <p>Subtotal dos pedidos:</p>
-                  <p>{priceTotal()}</p>
-                </div>
-              </div>
-            </div>
-
-            <Button>Finalizar compra</Button>
-
+            <ShipmentContainer $priceTotal={priceTotal()} />
           </div>
         ) : (
           <p>✖ Nenhum item no carrinho...</p>
