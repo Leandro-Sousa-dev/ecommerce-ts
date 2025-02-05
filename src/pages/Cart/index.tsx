@@ -18,13 +18,15 @@ export const Cart = () => {
         {cart.length > 0 ? (
           <div>
             <h2>Carrinho de compras</h2>
-            <div>
-              <CartTable />
-              <CupomContainer />
+            <div className="responsive">
+              <div>
+                <CartTable />
+                <CupomContainer />
 
+              </div>
+
+              <ShipmentContainer $priceTotal={priceTotal()} />
             </div>
-
-            <ShipmentContainer $priceTotal={priceTotal()} />
           </div>
         ) : (
           <p>✖ Nenhum item no carrinho...</p>

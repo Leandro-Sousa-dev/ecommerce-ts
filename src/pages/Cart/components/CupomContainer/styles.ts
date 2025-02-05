@@ -16,4 +16,16 @@ export const Cupom = styled.div`
         font-weight: 300;
         font-size: 1.2rem;
     }
+
+    input{
+        margin-top: 0.3rem;
+        max-width: 30rem;
+    }
+
+    @media (min-width: 640px){
+        flex-direction: row;
+        align-items: end;
+        gap: 2rem;
+
+    }
 `

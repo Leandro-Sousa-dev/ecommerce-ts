@@ -42,7 +42,6 @@ export const Table = styled.table`
         tr{
 
             td{ 
-
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -50,8 +49,8 @@ export const Table = styled.table`
                 padding: 1rem 0.5rem;               
                         
                 .productImg{
-                    display: none;
-                    width: 7rem;
+                    display: flex;
+                    width: 5rem;
                     border-radius: 8px;
                 }
                     
@@ -137,6 +136,17 @@ export const Table = styled.table`
 
                 font-weight: 700;
             }
+
+        }
+    }
+
+    @media (min-width: 1024px){
+        .hidden{
+            display: flex;
+        }
+    
+        .tGrid{        
+            grid-template-columns: repeat(5, minmax(7rem ,1fr)) 3rem;
 
         }
     }

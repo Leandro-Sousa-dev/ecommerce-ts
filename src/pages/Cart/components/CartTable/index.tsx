@@ -44,7 +44,7 @@ export const CartTable = () => {
 
                             <button onClick={() => { productCartIncrement(item) }}><p>+</p></button>
                         </td>
-                        <td className="hidden">
+                        <td className="hidden total">
                             <p>R$ {item.price * item.quantity},00</p>
                         </td>
                         <td>

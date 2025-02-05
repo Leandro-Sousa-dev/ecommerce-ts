@@ -7,7 +7,7 @@ export const CupomContainer = () => {
         <Cupom>
             <label>
                 Cupom
-                <InputStyled type="text" placeholder="Digite o código" $width="25rem" />
+                <InputStyled type="text" placeholder="Digite o código" />
             </label>
             <div>
                 <ButtonAlter><p>Aplicar cupom</p></ButtonAlter>

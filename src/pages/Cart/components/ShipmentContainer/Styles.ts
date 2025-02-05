@@ -4,6 +4,7 @@ import { theme } from "../../../../styles/variables";
 export const Shipment = styled.form`
     display: flex;
     flex-direction: column;
+    max-width: 35rem;
 
     .container{
         padding: 1rem;

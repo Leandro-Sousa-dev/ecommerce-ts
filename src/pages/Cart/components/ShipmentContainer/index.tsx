@@ -14,11 +14,12 @@ interface FormData {
     pais: string
 }
 
+const cupom = false
 
 export const ShipmentContainer = ({ $priceTotal }: ShipmentContainerProps) => {
     const { register, handleSubmit } = useForm<FormData>()
 
-    const [ freightage ] = useState(0)
+    const [freightage] = useState(0)
 
     // O correto aqui é receber as informações de
 
@@ -75,6 +76,16 @@ export const ShipmentContainer = ({ $priceTotal }: ShipmentContainerProps) => {
                         <p>Frete e manuseio:</p>
                         <span>R$ {freightage},00</span>
                     </div>
+
+                    {
+                        cupom ?
+
+                            <div>
+                                <p>Cupom:</p>
+                                <span>R$ -{freightage},00</span>
+                            </div>
+                            : ''
+                    }
                     <div>
                         <p>Total:</p>
                         <span>R$ {$priceTotal + freightage},00</span>
