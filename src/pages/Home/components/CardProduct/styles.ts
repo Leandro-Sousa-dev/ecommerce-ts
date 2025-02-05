@@ -18,7 +18,7 @@ export const CardContainer = styled.div`
     }
 
     div:nth-child(2) {
-        padding: 2.5rem 1.3rem;
+        padding: 1.5rem 1.5rem 1rem 1.5rem;
 
         display: flex;
         flex-direction: column;
@@ -47,6 +47,13 @@ export const CardContainer = styled.div`
             font-size: 1.6rem;
             font-weight: 500;
             text-align: center;
+        }
+    }
+
+    @media (min-width: 768px){
+        div:nth-child(2) {
+            padding: 2.5rem 1.5rem;
+
         }
     }
 `;
