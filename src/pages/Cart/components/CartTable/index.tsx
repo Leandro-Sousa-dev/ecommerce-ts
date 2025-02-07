@@ -31,7 +31,7 @@ export const CartTable = () => {
                             <img className="productImg" src={item.image} alt="item.title" />
                         </td>
                         <td className="title">
-                            <Link to={`/${item.title}-${item.id}`}>{item.title}</Link>
+                            <Link to={`/products/${item.id}`}>{item.title}</Link>
                         </td>
                         <td className="price">
                             <p>R$ {item.price},00</p>

@@ -21,7 +21,7 @@ export const CardProduct = ({ product }: CardProductsProps) => {
 
   return (
     <CardContainer>
-      <Link to={`/${product.title}-${product.id}`}>
+      <Link to={`/products/${product.id}`}>
         <div>
           <img src={product.image} alt="Foto do produto" />
         </div>

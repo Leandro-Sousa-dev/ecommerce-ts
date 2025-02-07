@@ -56,6 +56,8 @@ export const GlobalStyle = createGlobalStyle`
 
 body {
   font-family: 'Roboto', sans-serif;
+  letter-spacing: 0.1rem;
+
   width: 100%;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;

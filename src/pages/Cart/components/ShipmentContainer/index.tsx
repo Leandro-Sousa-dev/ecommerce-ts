@@ -38,13 +38,7 @@ export const ShipmentContainer = ({ $priceTotal }: ShipmentContainerProps) => {
                             <InputStyled
                                 type='text'
                                 placeholder='00000-000'
-                                {...register('cep', {
-                                    required: "Informe um cep válido",
-                                    pattern: {
-                                        value: /^\d{8}$/,
-                                        message: "O CEP deve ter exatamente 8 dígitos."
-                                    }
-                                })}
+                                name='cep'
                             />
                         </label>
                     </div>

@@ -7,9 +7,7 @@ export const CartContainer = styled.section`
     flex-direction: column;
     align-items: center;
     gap: 2rem; 
-    
-    letter-spacing: 0.1rem;
-    
+        
     .responsive{
         display: flex;
         flex-direction: column;
