@@ -73,6 +73,11 @@ a {
   cursor: pointer;
 }
 
+input:-webkit-autofill {
+  -webkit-text-fill-color: white !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
 button {
   cursor: pointer;
 }

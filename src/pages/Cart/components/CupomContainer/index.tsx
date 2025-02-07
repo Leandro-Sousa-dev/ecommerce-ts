@@ -23,7 +23,6 @@ export const CupomContainer = () => {
             </label>
             <div>
                 <ButtonAlter ><p>Aplicar cupom</p></ButtonAlter>
-                <input type="submit" value="1" />
             </div>
         </Cupom>
     )
