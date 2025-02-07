@@ -21,8 +21,30 @@ interface CartProviderProps {
   children: React.ReactNode;
 }
 
+const products = [
+  {
+    id: 1,
+    image: '/public/purple-shirt-ded.png',
+    title: "Camiseta Dev em Dobro",
+    color: "roxa",
+    size: "M",
+    price: 89.0,
+    quantity: 1,
+  },
+  {
+    id: 2,
+    image: '/public/purple-shirt-ded.png',
+    title: "Camiseta Dev em Dobro",
+    color: "roxa",
+    size: "M",
+    price: 89.0,
+    quantity: 1,
+  },
+ 
+]
 export const CartProvider = ({ children }: CartProviderProps) => {
-  const [cart, setCart] = useState<Products[]>([]);
+  // const [cart, setCart] = useState<Products[]>([]);
+  const [cart, setCart] = useState<Products[]>(products);
 
   function addProductIntoCart(product: ProductData): void {
     const productExistentInCart = cart.find(
@@ -89,9 +111,9 @@ export const CartProvider = ({ children }: CartProviderProps) => {
   function productCartDecrement(product: Products) {
     updateProductQuantity(product, product.quantity - 1);
   }
-  
+
   function priceTotal() {
-    return cart.reduce((sum, item)=> sum + item.quantity * item.price ,0)
+    return cart.reduce((sum, item) => sum + item.quantity * item.price, 0)
   }
   return (
     <CartContext.Provider

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Cupom = styled.div`
+export const Cupom = styled.form`
     width: 100%;
     padding: 2rem 0;
 
