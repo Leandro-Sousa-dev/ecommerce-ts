@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { theme } from "../../../styles/variables";
 
-export const ButtonStyle = styled.button`
+export const ButtonAlterStyle = styled.input`
     padding: 1rem 2rem;
 
     color: ${theme.baseColor};
@@ -14,5 +14,7 @@ export const ButtonStyle = styled.button`
     letter-spacing: 0.1rem;
     font-size: 1.2rem;
     font-weight: 400;
+
+    cursor: pointer;
 
 `

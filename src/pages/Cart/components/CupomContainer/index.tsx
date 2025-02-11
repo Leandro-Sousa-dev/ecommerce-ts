@@ -2,27 +2,58 @@ import { useForm, SubmitHandler } from "react-hook-form"
 import { ButtonAlter } from "../../../../components/ui/ButtonAlter"
 import { InputStyled } from "../../../../components/ui/InputStyled"
 import { Cupom } from "./styles"
+import { useState } from "react"
+import { InputMessage } from "../../../../components/ui/InputMessage"
 
 
 interface FormData {
     cupom: string
 }
 
-export const CupomContainer = () => {
-    const { handleSubmit, register } = useForm<FormData>()
+interface onValidateCupomProps {
+    onValidateCupom: (c: string) => void
+}
+
+const cupons = ['LEANDRO10', 'ECOMERCE20']
+
+export const CupomContainer = ({ onValidateCupom }: onValidateCupomProps) => {
+    const { handleSubmit, register, setError, clearErrors, formState: { errors } } = useForm<FormData>()
+    const [successMessage, setSuccessMessage] = useState(false);
 
     const handleSubmitForm: SubmitHandler<FormData> = (data) => {
-        console.log(data)
-        return data
+        if (data.cupom == '') {
+            clearErrors('cupom')
+            setSuccessMessage(false)
+            onValidateCupom('')
+            return
+        }
+
+        const validCupom = cupons.includes(data.cupom.toUpperCase())
+
+        if (!validCupom) {
+            setSuccessMessage(false)
+            onValidateCupom('')
+            setError('cupom', { type: 'manual', message: 'Cupom inválido' })
+            return
+        }
+
+        clearErrors('cupom');
+        setSuccessMessage(true)
+        onValidateCupom(data.cupom.slice(data.cupom.length - 2));
     }
+
     return (
         <Cupom onSubmit={handleSubmit(handleSubmitForm)}>
-            <label>
-                Cupom
-                <InputStyled {...register('cupom')} type="text" placeholder="Digite o código" />
-            </label>
+            <div className="relative">
+                <label>
+                    Cupom
+                    <InputStyled {...register('cupom')} type="text" placeholder="Digite o código" />
+                </label>
+                {errors.cupom && <InputMessage $color="red">{errors.cupom.message}</InputMessage>}
+                {successMessage && <InputMessage $color="green">Cupom aplicado</InputMessage>}
+            </div>
             <div>
-                <ButtonAlter ><p>Aplicar cupom</p></ButtonAlter>
+                <ButtonAlter type='submit' value='Aplicar cupom' />
             </div>
         </Cupom>
     )

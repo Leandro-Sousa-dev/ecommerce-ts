@@ -82,6 +82,10 @@ button {
   cursor: pointer;
 }
 
+.relative{
+  position: relative;
+}
+
 @media (min-width: 450px){
   html{
     font-size: 16px;

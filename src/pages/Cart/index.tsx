@@ -4,9 +4,16 @@ import { useCart } from "../../hooks/useCart";
 import { CartTable } from "./components/CartTable";
 import { CupomContainer } from "./components/CupomContainer";
 import { ShipmentContainer } from "./components/ShipmentContainer"
+import { useState } from "react";
 
 
 export const Cart = () => {
+  const [cupom, setCupom] = useState('')
+
+  const handleValidCupom = (c: string) => {
+    setCupom(c)
+  }
+
   const {
     cart,
     priceTotal } = useCart();
@@ -21,11 +28,11 @@ export const Cart = () => {
             <div className="responsive">
               <div>
                 <CartTable />
-                <CupomContainer />
+                <CupomContainer onValidateCupom={handleValidCupom}/>
 
               </div>
 
-              <ShipmentContainer $priceTotal={priceTotal()} />
+              <ShipmentContainer $cupom={cupom} $priceTotal={priceTotal()} />
             </div>
           </div>
         ) : (

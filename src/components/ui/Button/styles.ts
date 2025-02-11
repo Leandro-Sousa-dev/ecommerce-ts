@@ -7,6 +7,9 @@ interface HaveImgProp {
 
 export const ButtonContainer = styled.div<HaveImgProp>`
   button{
+    &:disabled{
+      background: ${theme.disabledColor};
+    }
 
     background-color: ${theme.bgLightColor};
     

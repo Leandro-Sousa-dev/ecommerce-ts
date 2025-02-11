@@ -21,7 +21,7 @@ export const Shipment = styled.form`
             font-size: 1.1rem;
             font-weight: 300;
 
-            gap: 1rem;
+            gap: 1.5rem;
 
         }
 

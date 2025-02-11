@@ -7,7 +7,7 @@ export const Cupom = styled.form`
     display: flex;
     flex-direction: column;
 
-    gap: 1rem;
+    gap: 1.5rem;
 
     label{
         display: flex;

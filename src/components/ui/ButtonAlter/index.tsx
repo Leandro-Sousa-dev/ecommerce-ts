@@ -1,8 +1,8 @@
-import { ButtonProps } from "../../../interfaces/ButtonProps"
-import { ButtonStyle } from "./styles"
+import { InputButtonProps } from "../../../interfaces/InputProps"
+import { ButtonAlterStyle } from "./styles"
 
-export const ButtonAlter = ({children}: ButtonProps)=> {
+export const ButtonAlter = (props: InputButtonProps) => {
     return (
-        <ButtonStyle>{children}</ButtonStyle>
+        <ButtonAlterStyle onClick={props.onClick} type={props.type} value={props.value} />
     )
 }
