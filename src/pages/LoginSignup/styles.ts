@@ -8,7 +8,7 @@ export const LoginContainer = styled.div`
     align-items: center;
     gap: 2.5rem;
 
-    padding-top: 2.5rem;
+    padding: 2.5rem 0;
 
     h2{
         font-size: 2rem;
@@ -103,6 +103,10 @@ export const LoginContainer = styled.div`
                 justify-content: center;
                 color: ${theme.bgLightColor};
 
+            }
+
+            .signupTerms{
+                font-weight: 300;
             }
         }   
     }

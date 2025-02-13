@@ -62,7 +62,7 @@ export const Login = () => {
 
                             </div>
                             <div className="singup">
-                                <Link to='/singup'>Criar uma conta</Link>
+                                <Link to='/signup'>Criar uma conta</Link>
 
                             </div>
                         </div>
