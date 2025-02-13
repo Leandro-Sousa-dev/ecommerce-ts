@@ -1,7 +1,8 @@
-import { styled } from 'styled-components'
-import { theme } from '../../styles/variables'
+import { css, styled } from 'styled-components'
 
 export const FooterContainer = styled.footer`
+    ${({ theme }) => theme && css`
+
     background-color: ${theme.bgDarkColor};
     
     whidth: 100%;
@@ -41,9 +42,11 @@ export const FooterContainer = styled.footer`
             grid-template-columns: repeat(3, 1fr);
         }
     }
-
+`}
 `
 export const Attribuition = styled.div`
+    ${({ theme }) => theme && css`
+
     background-color: ${theme.bgLightColor};
 
     display: flex;
@@ -57,5 +60,5 @@ export const Attribuition = styled.div`
 
     font-weight: 300;
     letter-spacing: 2px; 
-
+`}
 `

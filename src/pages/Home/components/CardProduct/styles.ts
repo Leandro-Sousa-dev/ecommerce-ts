@@ -1,7 +1,8 @@
-import { styled } from "styled-components"
-import { theme } from "../../../../styles/variables";
+import { css, styled } from "styled-components"
 
 export const CardContainer = styled.div`
+    ${({ theme }) => theme && css`
+
     display: flex;
     flex-direction: column;
 
@@ -56,4 +57,5 @@ export const CardContainer = styled.div`
 
         }
     }
+    `}
 `;

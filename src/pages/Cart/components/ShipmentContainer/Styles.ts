@@ -1,7 +1,8 @@
-import styled from "styled-components";
-import { theme } from "../../../../styles/variables";
+import styled, { css } from "styled-components";
 
 export const Shipment = styled.form`
+    ${({ theme }) => theme && css`
+
     display: flex;
     flex-direction: column;
     max-width: 35rem;
@@ -23,10 +24,6 @@ export const Shipment = styled.form`
 
             gap: 1.5rem;
 
-        }
-
-        input{
-            margin-top: 0.3rem;
         }
 
         select{
@@ -97,5 +94,5 @@ export const Shipment = styled.form`
         }
     
     }
-
+    `} 
 `

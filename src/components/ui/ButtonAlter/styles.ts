@@ -1,7 +1,8 @@
-import styled from "styled-components";
-import { theme } from "../../../styles/variables";
+import styled, { css } from "styled-components";
 
 export const ButtonAlterStyle = styled.input`
+    ${({ theme }) => theme && css`
+
     padding: 1rem 2rem;
 
     color: ${theme.baseColor};
@@ -16,5 +17,5 @@ export const ButtonAlterStyle = styled.input`
     font-weight: 400;
 
     cursor: pointer;
-
+    `}
 `

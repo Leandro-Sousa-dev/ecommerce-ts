@@ -1,11 +1,11 @@
-import { styled } from "styled-components";
-import { theme } from "../../styles/variables";
+import { css, styled } from "styled-components";
 
 interface ContainerProps {
   $isMenuOpen: boolean;
 }
 
 export const HeaderContainer = styled.header<ContainerProps>`
+  ${({ theme, $isMenuOpen }) => theme && css`
 
   color: ${theme.baseColor};
 
@@ -76,8 +76,7 @@ export const HeaderContainer = styled.header<ContainerProps>`
 
       font-size: 1rem;
 
-      transform: ${({ $isMenuOpen }) =>
-    $isMenuOpen ? "translateX(0)" : "translateX(-100%)"};
+      transform: ${$isMenuOpen ? "translateX(0)" : "translateX(-100%)"};
       transition: transform 0.3s ease-in-out;
 
       .asideHeader{
@@ -131,5 +130,5 @@ export const HeaderContainer = styled.header<ContainerProps>`
     
    
   }
-
+`}
 `;

@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import styled from "styled-components";
-import { theme } from "../../../styles/variables";
+import styled, { css } from "styled-components";
 
 export const CartStyles = styled(Link)`
+  ${({ theme }) => theme && css`
 
     img{
       width: 2rem;
@@ -35,4 +35,5 @@ export const CartStyles = styled(Link)`
 
       padding: 5px;  
     }
+  `}
 `

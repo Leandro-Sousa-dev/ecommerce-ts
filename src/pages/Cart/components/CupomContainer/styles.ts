@@ -18,7 +18,6 @@ export const Cupom = styled.form`
     }
 
     input{
-        margin-top: 0.3rem;
         max-width: 30rem;
     }
 

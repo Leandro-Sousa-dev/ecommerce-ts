@@ -28,7 +28,7 @@ export const Cart = () => {
             <div className="responsive">
               <div>
                 <CartTable />
-                <CupomContainer onValidateCupom={handleValidCupom}/>
+                <CupomContainer onValidateCupom={handleValidCupom} />
 
               </div>
 

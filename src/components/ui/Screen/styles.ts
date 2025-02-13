@@ -1,6 +1,8 @@
-import styled from "styled-components";
-import { theme } from "../../../styles/variables";
+import styled, { css } from "styled-components";
 
 export const Screen = styled.div`
-  background: ${theme.bgBaseColor};
+  ${({ theme }) => theme && css`
+    background: ${theme.bgBaseColor};
+
+  `}
 `;

@@ -1,7 +1,8 @@
-import { styled } from "styled-components";
-import { theme } from "../../styles/variables";
+import { css, styled } from "styled-components";
 
 export const Container = styled.div`
+    ${({ theme }) => theme && css`
+
   min-height: 100vh;
 
   max-width: 1250px;
@@ -26,4 +27,5 @@ export const Container = styled.div`
     padding: 2rem;
 
   }
+  `}
 `;

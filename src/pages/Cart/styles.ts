@@ -1,7 +1,8 @@
-import styled from "styled-components";
-import { theme } from "../../styles/variables";
+import styled, { css } from "styled-components";
 
 export const CartContainer = styled.section`
+    ${({ theme }) => theme && css`
+
     color: ${theme.baseColor};
     display: flex;
     flex-direction: column;
@@ -25,5 +26,5 @@ export const CartContainer = styled.section`
         }
     
     }
-
+`}
 `

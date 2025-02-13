@@ -1,11 +1,12 @@
 import { css, styled } from "styled-components"
-import { theme } from "../../../styles/variables";
 
 interface HaveImgProp {
   $imgButton: boolean
 }
 
 export const ButtonContainer = styled.div<HaveImgProp>`
+    ${({ theme, $imgButton }) => theme && css`
+
   button{
     &:disabled{
       background: ${theme.disabledColor};
@@ -24,7 +25,7 @@ export const ButtonContainer = styled.div<HaveImgProp>`
 
   }
 
-  ${({ $imgButton }) => $imgButton ? css`
+  ${$imgButton ? css`
   margin-right: 1rem;
 
     a{
@@ -50,7 +51,7 @@ export const ButtonContainer = styled.div<HaveImgProp>`
     
   }
   `
-    : css`
+      : css`
   a{
   
     display: flex;
@@ -69,7 +70,7 @@ export const ButtonContainer = styled.div<HaveImgProp>`
   
   }
   `
-  }
+    }
 
   @media( min-width: 900px){
     a{
@@ -97,12 +98,16 @@ export const ButtonContainer = styled.div<HaveImgProp>`
     
     }
   }
+  `}
+
 `;
 
 export const ButtonContent = styled.button`
+    ${({ theme }) => theme && css`
   
   color: ${theme.baseColor};
 
   font-size: 1rem;
   letter-spacing: 1.5px;
+  `}
 `

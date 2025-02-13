@@ -1,7 +1,8 @@
-import styled from "styled-components";
-import { theme } from "../../../../styles/variables";
+import styled, { css } from "styled-components";
 
 export const Table = styled.table`
+    ${({ theme }) => theme && css`
+
     .hidden{
         display: none;
     }
@@ -151,4 +152,5 @@ export const Table = styled.table`
         }
     }
 
+    `}
 `

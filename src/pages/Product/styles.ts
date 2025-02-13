@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import { theme } from "../../styles/variables";
+import styled, { css } from "styled-components";
 
 export const ProductContainer = styled.section`
+    ${({ theme }) => theme && css`
 
     display: flex;
     flex-direction: column;
@@ -97,4 +97,5 @@ export const ProductContainer = styled.section`
             }
         }
     }
+`}
 `

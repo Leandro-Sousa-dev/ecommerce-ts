@@ -5,7 +5,6 @@ import { Cupom } from "./styles"
 import { useState } from "react"
 import { InputMessage } from "../../../../components/ui/InputMessage"
 
-
 interface FormData {
     cupom: string
 }

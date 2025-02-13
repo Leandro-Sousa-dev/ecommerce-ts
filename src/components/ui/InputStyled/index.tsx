@@ -3,7 +3,7 @@ import { forwardRef, InputHTMLAttributes } from "react"
 
 type InputComponentProps = InputHTMLAttributes<HTMLElement>
 
-export const    InputStyled = forwardRef<HTMLInputElement, InputComponentProps>(
+export const InputStyled = forwardRef<HTMLInputElement, InputComponentProps>(
     ({ name, type = 'text', ...rest }, ref) => {
         return (
             <>
