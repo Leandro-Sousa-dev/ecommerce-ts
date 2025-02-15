@@ -1,11 +1,11 @@
 import { Routes, Route } from "react-router-dom"
 
-import { MainPage } from "./pages/Main"
-import { Home } from "./pages/Home"
+import { MainPage } from "./pages/Client"
+import { Home } from "@Client/Home"
 import { Cart } from "@Client/Cart"
-import { ProductsDetails } from "./pages/Product"
-import { Login } from "./pages/LoginSignup/Login"
-import { Signup } from "./pages/LoginSignup/Signup"
+import { ProductsDetails } from "@Client/Product"
+import { Login } from "@Client/LoginSignup/Login"
+import { Signup } from "@Client/LoginSignup/Signup"
 import { AdminPage } from "./pages/Admin"
 import { Dashboard } from "@Admin/Dashboard"
 
@@ -21,7 +21,7 @@ export function AppRoutes() {
       </Route>
       <Route path="/admin" element={<AdminPage />}>
         <Route path="/admin" element={<Dashboard />} />
-         {/* <Route path="" element={< />} /> */}
+        {/* <Route path="" element={< />} /> */}
       </Route>
     </Routes>
   )

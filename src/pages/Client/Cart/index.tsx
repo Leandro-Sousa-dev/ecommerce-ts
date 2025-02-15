@@ -1,5 +1,5 @@
 import { CartContainer } from "./styles";
-import { Container } from "../../Home/styles";
+import { Container } from "@Client/Home/styles";
 import { useCart } from "@hooks/useCart";
 import { CartTable } from "./components/CartTable";
 import { CupomContainer } from "./components/CupomContainer";

@@ -1,4 +1,4 @@
-import { products } from "../../mocks/json"
+import { products } from "../../../mocks/json"
 import { SectionProducts } from "./components/SectionProducts"
 import { Container } from "./styles"
 

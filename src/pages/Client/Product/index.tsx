@@ -2,7 +2,7 @@ import { Link, useParams } from "react-router-dom"
 import { Container } from "../Home/styles"
 import { ProductContainer } from "./styles"
 
-import { products } from "../../mocks/json"
+import { products } from "../../../mocks/json"
 import { ProductData } from "@interfaces/ProductData"
 import { Button } from "@components/ui/Button"
 import { useCart } from "@hooks/useCart"
