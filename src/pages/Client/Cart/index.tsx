@@ -1,6 +1,6 @@
 import { CartContainer } from "./styles";
-import { Container } from "../Home/styles";
-import { useCart } from "../../hooks/useCart";
+import { Container } from "../../Home/styles";
+import { useCart } from "@hooks/useCart";
 import { CartTable } from "./components/CartTable";
 import { CupomContainer } from "./components/CupomContainer";
 import { ShipmentContainer } from "./components/ShipmentContainer"

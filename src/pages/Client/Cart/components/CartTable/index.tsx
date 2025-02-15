@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import trash from "/trash.svg"
-import { useCart } from "../../../../hooks/useCart";
+import { useCart } from "@hooks/useCart";
 import { Table } from "./styles";
 
 

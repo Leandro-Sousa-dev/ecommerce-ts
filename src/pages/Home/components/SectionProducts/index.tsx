@@ -1,6 +1,6 @@
 import { CardProduct } from "../CardProduct";
 import { Container } from "./styles";
-import { ProductData } from "../../../../interfaces/ProductData";
+import { ProductData } from "@interfaces/ProductData";
 
 export interface SectionProductsProps {
   products: ProductData[];

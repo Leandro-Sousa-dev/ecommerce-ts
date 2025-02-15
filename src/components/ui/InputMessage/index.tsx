@@ -1,4 +1,4 @@
-import { InputMenssage } from "../../../interfaces/InputProps"
+import { InputMenssage } from "@interfaces/InputProps"
 import { Pstyled } from "./style"
 
 export const InputMessage = (props: InputMenssage) => {

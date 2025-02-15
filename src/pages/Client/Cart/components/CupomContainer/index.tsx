@@ -1,9 +1,9 @@
 import { useForm, SubmitHandler } from "react-hook-form"
-import { ButtonAlter } from "../../../../components/ui/ButtonAlter"
-import { InputStyled } from "../../../../components/ui/InputStyled"
+import { ButtonAlter } from "@components/ui/ButtonAlter"
+import { InputStyled } from "@components/ui/InputStyled"
 import { Cupom } from "./styles"
 import { useState } from "react"
-import { InputMessage } from "../../../../components/ui/InputMessage"
+import { InputMessage } from "@components/ui/InputMessage"
 
 interface FormData {
     cupom: string

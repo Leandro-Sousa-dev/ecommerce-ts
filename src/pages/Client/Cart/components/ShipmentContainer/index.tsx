@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { Button } from "../../../../components/ui/Button";
-import { ButtonAlter } from "../../../../components/ui/ButtonAlter";
-import { InputStyled } from "../../../../components/ui/InputStyled";
+import { Button } from "@components/ui/Button";
+import { ButtonAlter } from "@components/ui/ButtonAlter";
+import { InputStyled } from "@components/ui/InputStyled";
 import { Shipment } from "./Styles";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { InputMessage } from "../../../../components/ui/InputMessage";
+import { InputMessage } from "@components/ui/InputMessage";
 
 interface ShipmentContainerProps {
     $priceTotal: number

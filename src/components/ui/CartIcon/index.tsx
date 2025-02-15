@@ -1,4 +1,4 @@
-import { useCart } from "../../../hooks/useCart";
+import { useCart } from "@hooks/useCart";
 import { CartStyles } from "./styles"
 import CartIcon from "/icon-cart.svg";
 

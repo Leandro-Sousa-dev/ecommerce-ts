@@ -1,4 +1,4 @@
-import { InputButtonProps } from "../../../interfaces/InputProps"
+import { InputButtonProps } from "@interfaces/InputProps"
 import { ButtonAlterStyle } from "./styles"
 
 export const ButtonAlter = (props: InputButtonProps) => {

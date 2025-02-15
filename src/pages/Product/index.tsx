@@ -3,9 +3,9 @@ import { Container } from "../Home/styles"
 import { ProductContainer } from "./styles"
 
 import { products } from "../../mocks/json"
-import { ProductData } from "../../interfaces/ProductData"
-import { Button } from "../../components/ui/Button"
-import { useCart } from "../../hooks/useCart"
+import { ProductData } from "@interfaces/ProductData"
+import { Button } from "@components/ui/Button"
+import { useCart } from "@hooks/useCart"
 
 export const ProductsDetails = () => {
     const { id } = useParams()

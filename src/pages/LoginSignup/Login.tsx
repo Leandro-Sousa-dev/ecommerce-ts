@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Button } from "../../components/ui/Button";
-import { InputMessage } from "../../components/ui/InputMessage";
-import { InputStyled } from "../../components/ui/InputStyled";
+import { Button } from "@components/ui/Button";
+import { InputMessage } from "@components/ui/InputMessage";
+import { InputStyled } from "@components/ui/InputStyled";
 import { Container } from "../Home/styles"
 import { LoginContainer } from "./styles"
 import { useForm, SubmitHandler } from "react-hook-form";

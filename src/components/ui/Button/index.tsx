@@ -1,5 +1,5 @@
 import { ButtonContainer, ButtonContent } from "./styles"
-import { ButtonProps } from "../../../interfaces/ButtonProps"
+import { ButtonProps } from "@interfaces/ButtonProps"
 
 export const Button = ({
   disabled,

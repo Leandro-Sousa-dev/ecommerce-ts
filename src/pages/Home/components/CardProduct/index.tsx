@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import { Button } from "../../../../components/ui/Button";
+import { Button } from "@components/ui/Button";
 import { CardContainer } from "./styles";
-import { useCart } from "../../../../hooks/useCart";
+import { useCart } from "@hooks/useCart";
 
 interface ProductData {
   id: number;
