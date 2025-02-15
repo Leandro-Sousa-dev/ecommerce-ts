@@ -1,4 +1,4 @@
-import { List } from "../ui/List"
+import { List } from "@components/ui/List"
 import { FooterContainer, Attribuition } from "./styles"
 
 const institucionalList = [

@@ -1,14 +1,14 @@
 import { HeaderContainer } from "./styles";
-import { Button } from "../ui/Button";
+import { Button } from "@components/ui/Button";
 
 import Logo from "/logo.svg";
 import MenuIcon from "/menu-icon.png";
 import CloseIcon from "/icon-close.png";
 import User from "/icon-user.svg";
 import { useState } from "react";
-import { List } from "../ui/List";
-import { MenuButton } from "../ui/MenuButton";
-import { CartIconContainer } from "../ui/CartIcon";
+import { List } from "@components/ui/List";
+import { MenuButton } from "@components/ui/MenuButton";
+import { CartIconContainer } from "@components/ui/CartIcon";
 
 const menuItems = [
   { name: "Home", url: "/" },
@@ -26,7 +26,9 @@ export const Header = () => {
       <div className="header">
         <div className="main">
           <div>
-            <MenuButton img={MenuIcon} onClick={() => setMenuOpen(!menuOpen)} />
+            <div className="hideMenuBtn">
+              <MenuButton img={MenuIcon} onClick={() => setMenuOpen(!menuOpen)} />
+            </div>
             <div>
               <img className="logo" src={Logo} alt="Logo Dev em Dobro" />
             </div>

@@ -18,7 +18,7 @@ export const HeaderContainer = styled.header<ContainerProps>`
     
     background: ${theme.bgBaseColor};
     
-    max-width: 1250px;
+    max-width: 1550px;
 
     margin: 0 auto;
 
@@ -71,8 +71,10 @@ export const HeaderContainer = styled.header<ContainerProps>`
       
       background: ${theme.bgDarkColor};
 
-      height: 100vh;
+      min-height: 100vh;
       width: 100%;
+
+      scrollbar-width: none;
 
       font-size: 1rem;
 
@@ -115,20 +117,21 @@ export const HeaderContainer = styled.header<ContainerProps>`
 
       } 
     }
-    @media( min-width: 900px){
-   
-      nav ul{
-       display: flex;
-    
+    @media( min-width: 992px){
+        aside{
+          width: 15rem;
+        }
+        nav ul{
+        display: flex;
+        
       }
+
     }
-    
 
     }
    
     }
-    
-   
+  
   }
 `}
 `;
