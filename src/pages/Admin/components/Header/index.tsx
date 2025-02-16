@@ -1,19 +1,18 @@
 import { MenuButton } from "@components/ui/MenuButton"
-import { useState } from "react";
 import MenuIcon from "/menu-icon.png";
 import CloseIcon from "/icon-close.png";
 import { HeaderContainer } from "./styles";
+import { useNav } from "@hooks/useNav";
 
 export const Header = () => {
-    const [menuOpen, setMenuOpen] = useState<boolean>(false);
-
+    const { nav, togglerNav } = useNav()
     return (
-        <HeaderContainer $isMenuOpen={menuOpen}>
+        <HeaderContainer $isMenuOpen={nav.active}>
             <div className="header">
                 <div className="main">
-                    <MenuButton img={MenuIcon} onClick={() => setMenuOpen(!menuOpen)} />
+                    <MenuButton img={MenuIcon} onClick={() => togglerNav(nav.active)} />
 
-                    <aside onClick={() => setMenuOpen(!menuOpen)}>
+                    <aside onClick={() => togglerNav(nav.active)}>
                         <div className="asideHeader">
                             <MenuButton img={CloseIcon} />
 

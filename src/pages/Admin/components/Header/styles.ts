@@ -18,8 +18,6 @@ export const HeaderContainer = styled.header<ContainerProps>`
     
     background: ${theme.bgBaseColor};
     
-    max-width: 1550px;
-
     margin: 0 auto;
 
     padding: 0 2rem;

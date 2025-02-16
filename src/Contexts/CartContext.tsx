@@ -1,5 +1,6 @@
-import React, { createContext, useState } from "react";
+import { createContext, useState } from "react";
 import { ProductData } from "../interfaces/ProductData";
+import { ChildrenProps } from "@interfaces/ChildrenProps";
 
 export interface Products extends ProductData {
   quantity: number;
@@ -16,10 +17,6 @@ interface CartContextProps {
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const CartContext = createContext({} as CartContextProps);
-
-interface CartProviderProps {
-  children: React.ReactNode;
-}
 
 const products = [
   {
@@ -40,9 +37,9 @@ const products = [
     price: 89.0,
     quantity: 1,
   },
- 
+
 ]
-export const CartProvider = ({ children }: CartProviderProps) => {
+export const CartProvider = ({ children }: ChildrenProps) => {
   // const [cart, setCart] = useState<Products[]>([]);
   const [cart, setCart] = useState<Products[]>(products);
 

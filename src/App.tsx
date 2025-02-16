@@ -6,6 +6,7 @@ import { Screen } from "./components/ui/Screen/styles";
 import { CartProvider } from "./Contexts/CartContext";
 import { ThemeProvider } from "styled-components";
 import { theme } from "./styles/theme";
+import { NavProvider } from "Contexts/NavContext";
 
 function App() {
   return (
@@ -13,7 +14,9 @@ function App() {
       <BrowserRouter>
         <Screen >
           <CartProvider>
-            <AppRoutes />
+            <NavProvider>
+              <AppRoutes />
+            </NavProvider>
           </CartProvider>
           <GlobalStyle />
         </Screen>

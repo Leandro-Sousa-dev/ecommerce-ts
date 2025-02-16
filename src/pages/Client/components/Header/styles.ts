@@ -73,7 +73,6 @@ export const HeaderContainer = styled.header<ContainerProps>`
 
       scrollbar-width: none;
 
-
       height: 100vh;
       width: 100%;
 

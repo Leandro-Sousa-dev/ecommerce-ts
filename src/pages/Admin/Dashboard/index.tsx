@@ -1,5 +1,9 @@
+import { DashboardContainer } from "./styles"
+
 export const Dashboard = () => {
     return (
-        <p>aaa</p>
+        <DashboardContainer>
+            aaa
+        </DashboardContainer>
     )
 }
