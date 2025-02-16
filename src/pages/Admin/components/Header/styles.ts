@@ -1,10 +1,7 @@
+import { MenuOpenProp } from "@interfaces/MenuOpenProp";
 import { css, styled } from "styled-components";
 
-interface ContainerProps {
-  $isMenuOpen: boolean;
-}
-
-export const HeaderContainer = styled.header<ContainerProps>`
+export const HeaderContainer = styled.header<MenuOpenProp>`
   ${({ theme, $isMenuOpen }) => theme && css`
 
   color: ${theme.baseColor};
