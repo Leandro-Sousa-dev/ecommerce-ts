@@ -5,10 +5,11 @@ import Logo from "/logo.svg";
 import MenuIcon from "/menu-icon.png";
 import CloseIcon from "/icon-close.png";
 import User from "/icon-user.svg";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { List } from "@components/ui/List";
 import { MenuButton } from "@components/ui/MenuButton";
 import { CartIconContainer } from "@components/ui/CartIcon";
+import { AuthContext } from "Contexts/AuthContext";
 
 const menuItems = [
   { name: "Home", url: "/" },
@@ -21,13 +22,18 @@ const menuItems = [
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
+  const { isAuthenticated, user } = useContext(AuthContext)
+
   return (
     <HeaderContainer $isMenuOpen={menuOpen}>
       <div className="header">
         <div className="main">
           <div>
             <div className="hideMenuBtn">
-              <MenuButton img={MenuIcon} onClick={() => setMenuOpen(!menuOpen)} />
+              <MenuButton
+                img={MenuIcon}
+                onClick={() => setMenuOpen(!menuOpen)}
+              />
             </div>
             <div>
               <img className="logo" src={Logo} alt="Logo Dev em Dobro" />
@@ -38,16 +44,18 @@ export const Header = () => {
           </nav>
 
           <aside onClick={() => setMenuOpen(!menuOpen)}>
-            <div className='asideHeader'>
-
+            <div className="asideHeader">
               <MenuButton img={CloseIcon} />
               <div>
                 <img src={Logo} alt="Logo Dev em Dobro" />
               </div>
 
-              <Button as='a' href='/login'>
-                Entrar ou Cadastrar-se
-              </Button>
+              {isAuthenticated && <p>Logado</p>}
+              {!isAuthenticated && (
+                <Button as="a" href="/login">
+                  Entrar ou Cadastrar-se
+                </Button>
+              )}
 
               <CartIconContainer>
                 <p>Carrinho de compras</p>
@@ -55,21 +63,20 @@ export const Header = () => {
             </div>
 
             <List list={menuItems} />
-
           </aside>
 
           <div>
-            <Button as='a' href='/login'>
-              <img src={User} alt="Ícone de usuário" />
-              <p>Entrar ou Cadastrar-se</p>
-            </Button>
+            {isAuthenticated && <p>Logado</p>}
+            {!isAuthenticated && (
+              <Button as="a" href="/login">
+                Entrar ou Cadastrar-se
+              </Button>
+            )}
 
             <CartIconContainer />
-
           </div>
         </div>
       </div>
     </HeaderContainer>
-
   );
 };

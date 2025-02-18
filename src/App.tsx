@@ -7,17 +7,20 @@ import { CartProvider } from "./Contexts/CartContext";
 import { ThemeProvider } from "styled-components";
 import { theme } from "./styles/theme";
 import { NavProvider } from "Contexts/NavContext";
+import { AuthProvider } from "Contexts/AuthContext";
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
-        <Screen >
-          <CartProvider>
-            <NavProvider>
-              <AppRoutes />
-            </NavProvider>
-          </CartProvider>
+        <Screen>
+          <AuthProvider>
+            <CartProvider>
+              <NavProvider>
+                <AppRoutes />
+              </NavProvider>
+            </CartProvider>
+          </AuthProvider>
           <GlobalStyle />
         </Screen>
       </BrowserRouter>
