@@ -5,7 +5,6 @@ export const DashboardContainer = styled.div<MenuOpenProp>`
     ${({ theme, $isMenuOpen }) => css`
         color: ${theme.baseColor};
         height: 100vh;
-        background: red;
 
         justify-self: end;
 

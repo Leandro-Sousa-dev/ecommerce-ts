@@ -20,12 +20,12 @@ export const NavProvider = ({ children }: ChildrenProps) => {
         const navChoice = localStorage.getItem("nav")
 
         if (!navChoice) return localStorage.setItem("nav", JSON.stringify(nav))
-        // console.log(JSON.parse(navChoice));
 
         setNav(JSON.parse(navChoice))
     }
 
     useEffect(() => {
+        if (window.matchMedia("(max-width: 640px)").matches) return
         checkNavChoice()
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])

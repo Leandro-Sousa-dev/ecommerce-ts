@@ -112,7 +112,7 @@ export const HeaderContainer = styled.header<MenuOpenProp>`
 
       } 
     }
-    @media( min-width: 992px){
+    @media( min-width: 640px){
         aside{
           width: 15rem;
         }
