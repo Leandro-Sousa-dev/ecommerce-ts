@@ -22,7 +22,7 @@ const menuItems = [
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
-  const { isAuthenticated, user } = useContext(AuthContext)
+  const { isAuthenticated } = useContext(AuthContext)
 
   return (
     <HeaderContainer $isMenuOpen={menuOpen}>
@@ -69,7 +69,8 @@ export const Header = () => {
             {isAuthenticated && <p>Logado</p>}
             {!isAuthenticated && (
               <Button as="a" href="/login">
-                Entrar ou Cadastrar-se
+                <img src={User} alt="Ícone de usuário" />
+                <p>Entrar ou Cadastrar-se</p>
               </Button>
             )}
 
